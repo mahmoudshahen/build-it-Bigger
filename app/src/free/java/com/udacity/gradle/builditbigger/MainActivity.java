@@ -24,7 +24,6 @@ import shahen.mahmoud.showjoke.JokeActivity;
 
 
 public class MainActivity extends AppCompatActivity {
-    Joker joker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        joker = new Joker();
-        new EndpointsAsyncTask().execute(new com.udacity.gradle.builditbigger.Pair(this, joker));
+        new EndpointsAsyncTask().execute(this);
 
         //Toast.makeText(this, , Toast.LENGTH_SHORT).show();
     }
